@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+  <div class="w-full text-gray-700 sticky top-0 bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg z-50">
+
+    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+
+      <div class="p-4 flex flex-row items-center justify-between">
+        <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment</a>
+
+        <button class="md:hidden rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
+          
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav :class="{'flex': open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        
+        <!-- <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline " href="#">Blog</a> -->
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./about.html">About</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./room.html">Room</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./facility.html">Facilities</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="#">Meal</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./travel.html">Travel</a> 
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./faqs.html">FAQs</a> 
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./contact.html">Contact</a>
+        
+        
+      </nav>
+    </div>
+</div>
+
+<!-- mobile -->
+<div id="hs-overlay-example" class="hs-overlay hs-overlay-open:translate-x-0  -translate-x-full fixed top-0 left-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white border-r  hidden" tabindex="-1">
+  <div class="flex justify-between items-center py-3 px-4 ">
+    <h3 class="font-bold text-gray-800  font-logo">
+      moment
+    </h3>
+    <button class="rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700   " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
+      <span class="sr-only">Close modal</span>
+      <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+        
+        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./about.html">About</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg d md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./room.html">Room</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./facility.html">Facilities</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Meal</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./travel.html">Travel</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./faqs.html">FAQs</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./contact.html">Contact</a>
+</div>
+    
+
+    <!-- cover -->
+    <div class=" h-56 md:h-96 overflow-hidden mb-12 " style="background: #EAF5F6; ">
+        <div class="pagetop1 ">
+        </div>
+    </div>
+
+
+
+   
+
+
+
+    <!-- facility -->
+    <h1  class="text-center  mb-12 text-4xl text-gray-800 ">
+        Meal
+    </h1>
+
+    <!-- brunch -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Brunch -
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 澳洲炒蛋 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-2.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            蛋比較熟 配菜通常是培根, 香腸, 蕃茄及酵母麵包。<br>
+                            肉品來源為台灣。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">澳洲炒蛋</h1>
+            </div>
+            <!-- 法式炒蛋 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-3.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            蛋比較濕（小火慢慢炒的那種）鮮蝦.洋芋千層.番茄.白藜麥.法國GC可頌。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">法式炒蛋</h1>
+            </div>
+            <!-- 煎有料蛋捲 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-4.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            炒菇, 乳酪, 煎火腿, 經典燉菜及酵母麵包。<br>
+                            肉品來源為台灣。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">煎有料蛋捲</h1>
+            </div>
+            <!-- 乳酪火腿脆煎三明治與太陽蛋 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-1.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            秘方鍋煎麵包及歐洲乳酪。<br>
+                            肉品來源為台灣。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">乳酪火腿脆煎三明治與太陽蛋</h1>
+            </div>
+            <!-- 班尼迪克蛋 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-17.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            煙燻鮭魚,火腿,荷蘭醬(打到手痠),法國GC可頌。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">班尼迪克蛋</h1>
+            </div>
+            <!-- 營養優果盃 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-33.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            歐洲優格, 堅果, 新鮮水果, 蜂蜜。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">營養優果盃</h1>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- lunch -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Lunch -
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 松露野菇起司義大利燉飯 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-20.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            義大利米, 雞高湯, 松露醬及帕達諾起司。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">松露野菇起司義大利燉飯</h1>
+            </div>
+            <!-- 煎干貝海膽醬義大利燉飯 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-14.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            義大利米, 生食級干貝及蛤蜊高湯調味。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">煎干貝海膽醬義大利燉飯</h1>
+            </div>
+            <!-- 蝦肉燉菜濃汁米飯 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-30.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            紐奧良式香料粉,龍蝦高湯,藜麥飯。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">蝦肉燉菜濃汁米飯</h1>
+            </div>
+            <!-- 番茄香料啤酒燉豬肉米飯 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-25.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            燉豬梅花.百里香.西班牙紅椒粉.藜麥飯。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">番茄香料啤酒燉豬肉米飯</h1>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Appertize -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Appertize -
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 炸雞 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-bottom  transform duration-500  group mb-4" style="background-image: url(/image/meal-26.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            焦糖風味.特調麵衣 (神秘配方) 酸奶醬。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">炸雞</h1>
+            </div>
+            <!-- 松露薯條附自製沾醬 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-bottom  transform duration-500  group mb-4" style="background-image: url(/image/meal-19.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            義大利松露油,松露醬,大蒜蛋黃醬。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">松露薯條附自製沾醬</h1>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- dessert -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Dessert -
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 法式土司 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-34.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            義大利米, 雞高湯, 松露醬及帕達諾起司。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">法式土司</h1>
+            </div>
+            <!-- 薄鬆餅 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-39.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            義大利米, 生食級干貝及蛤蜊高湯調味。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">薄鬆餅</h1>
+            </div>
+            <!-- 奶油焦糖布丁 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-15.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            熬煮焦糖醬 手工鹹奶油 杏仁酒(大人吃的布丁)。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">奶油焦糖布丁</h1>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- coffee -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Coffee -
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 美式 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-21.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            美式咖啡。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">美式</h1>
+            </div>
+            <!-- 拿鐵 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-13.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            拿鐵咖啡。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">拿鐵</h1>
+            </div>
+            <!-- 卡布奇諾 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-40.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            卡布奇諾。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">卡布奇諾</h1>
+            </div>
+            <!-- 摩卡 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-18.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            摩卡咖啡。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">摩卡</h1>
+            </div>
+            <!-- 黑糖拿鐵 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-16.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            黑糖拿鐵。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">黑糖拿鐵</h1>
+            </div>
+            <!-- 蜂蜜拿鐵 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-41.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            蜂蜜拿鐵。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">蜂蜜拿鐵</h1>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- tea -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Tea -
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 高山莊園紅茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-23.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            高山莊園紅茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">高山莊園紅茶</h1>
+            </div>
+            <!-- 美顏紅棗茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-37.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            美顏紅棗茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">美顏紅棗茶</h1>
+            </div>
+            <!-- 南非國寶茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-5.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            南非國寶茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">南非國寶茶</h1>
+            </div>
+            <!-- 黃金蕎麥茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-31.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            黃金蕎麥茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">黃金蕎麥茶</h1>
+            </div>
+            <!-- 康福茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-9.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            康福茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">康福茶</h1>
+            </div>
+            <!-- 錫蘭紅茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-32.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            錫蘭紅茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">錫蘭紅茶</h1>
+            </div>
+            <!-- 鮮奶茶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-7.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            鮮奶茶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">鮮奶茶</h1>
+            </div>
+            <!-- 黑糖鮮奶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-6.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            黑糖鮮奶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">黑糖鮮奶</h1>
+            </div>
+            <!-- 可可鮮奶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-29.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            可可鮮奶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">可可鮮奶</h1>
+            </div>
+            <!-- 抹茶鮮奶 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-38.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            抹茶鮮奶。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">抹茶鮮奶</h1>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- juice -->
+    <section class="container mx-auto px-12 mb-24">
+        <h2  class="text-center  mb-12  font-logo text-slate-400 ">
+            - Juice -
+        </h2>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 m-auto  gap-8 ">
+            <!-- 綠果汁 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-11.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            大黃瓜、柳橙、蘋果。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">綠果汁</h1>
+            </div>
+            <!-- 紫果汁 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-12.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            火龍果、葡萄、芭樂。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">紫果汁</h1>
+            </div>
+            <!-- 黃果汁 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-36.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            蘋果、柳橙、鳳梨。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">黃果汁</h1>
+            </div>
+            <!-- 橘果汁 -->
+            <div class="text-center  text-gray-500 hover:text-gray-900">
+
+                <div class=" rounded-full w-full h-52  overflow-hidden  shadow-xl bg-cover bg-center  transform duration-500  group mb-4" style="background-image: url(/image/meal-28.avif);">
+                    <div class="bg-black bg-opacity-0 px-10 flex flex-wrap flex-col items-center justify-center h-full hover:bg-opacity-70 transform duration-300 ">
+                        
+                        <div class="opacity-0 text-white text-sm group-hover:opacity-80 transform duration-500 ">
+                          <p class="">
+                            紅蘿蔔、蘋果、鳳梨。
+                          </p>              
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-base font-medium ">橘果汁</h1>
+            </div>
+
+        </div>
+    </section>
+
+
+    
+
+    
+
+
+
+
+
+
+
+    <!-- footer -->
+  <footer class="relative bg-gradient-to-r from-gray-50 via-[#d9e9f8] to-gray-50 pt-8 pb-6">
+    <div class="container mx-auto px-12">
+      <div class="flex flex-wrap text-center md:text-left">
+
+        <div class="w-full md:w-6/12 px-4">
+          <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment
+          </a>
+          
+
+          <div class="flex flex-row text-sm text-gray-600 mt-6 justify-center md:justify-start">
+            <div class="w-10">
+              <i class="fa-solid fa-phone  text-slate-400  my-auto text-lg"></i>
+            </div>
+            <p>+886-6-2218188</p>
+          </div>
+          <div class="flex flex-row text-sm text-gray-600 mt-2 justify-center md:justify-start">
+            <div class="w-10">
+              <i class="fa-solid fa-envelope  text-slate-400  my-auto text-lg"></i>
+            </div>
+            <p>moment@gmail.com</p>
+          </div>
+          
+          <p class=" mt-4 text-sm text-gray-600">
+            708 台南市安平區漁光路114號
+          </p>
+          
+          <div class="flex mt-6 space-x-6 text-gray-600 justify-center md:justify-start">
+            <a class="hover:text-slate-400 text-2xl" href target="_blank" rel="noreferrer">
+              <span class="sr-only"> Facebook </span>
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a class="hover:text-slate-400 text-2xl" href target="_blank" rel="noreferrer">
+              <span class="sr-only"> Instagram </span>
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="hover:text-slate-400 text-2xl" href target="_blank" rel="noreferrer">
+              <span class="sr-only"> Instagram </span>
+              <i class="fa-brands fa-line"></i>
+            </a>
+
+          </div>
+        </div>
+
+
+        <div class="w-full md:w-6/12 px-4 hidden md:block">
+
+          <div class="grid grid-cols-2 items-top mb-6">
+            <div class="w-full  px-4 ml-auto">
+              <div>
+                <p class="font-medium">
+                  Explore
+                </p>
+                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a class="hover:opacity-75" href="./about.html"> About </a>
+                  <a class="hover:opacity-75" href="./room.html"> Room </a>
+                  <a class="hover:opacity-75" href="./facility.html"> Facilities </a>
+                  <a class="hover:opacity-75" href="#"> Meal </a>
+                  <a class="hover:opacity-75" href="./travel.html"> Travel </a>
+                </nav>
+              </div>
+            </div>
+            <div class="w-full  px-4">
+              <div>
+                <p class="font-medium">
+                  Services
+                </p>
+                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a class="hover:opacity-75" href="./faqs.html"> FAQs </a>
+                  <a class="hover:opacity-75" href="./contact.html"> Contact </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="my-6 border-blueGray-300">
+      <div class="flex flex-wrap items-center md:justify-between justify-center">
+        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+          <div class="text-sm text-slate-700  py-1">
+            Copyright © 2023 Moment by Tina Chen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="/node_modules/preline/dist/preline.js"></script>
+    <!-- flowbite -->
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <!-- tw element -->
+    <script src="/node_modules/tw-elements/dist/js/index.min.js"></script>
+</body>
+</html>

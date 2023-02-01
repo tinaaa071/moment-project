@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+  <div class="w-full text-gray-700 sticky top-0 bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg z-50">
+
+    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+
+      <div class="p-4 flex flex-row items-center justify-between">
+        <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment</a>
+
+        <button class="md:hidden rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
+          
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav :class="{'flex': open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        
+        <!-- <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline " href="#">Blog</a> -->
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./about.html">About</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./room.html">Room</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./facility.html">Facilities</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./meal.html">Meal</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./travel.html">Travel</a> 
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./faqs.html">FAQs</a> 
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./contact.html">Contact</a>
+        
+        
+      </nav>
+    </div>
+</div>
+
+<!-- mobile -->
+<div id="hs-overlay-example" class="hs-overlay hs-overlay-open:translate-x-0  -translate-x-full fixed top-0 left-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white border-r  hidden" tabindex="-1">
+  <div class="flex justify-between items-center py-3 px-4 ">
+    <h3 class="font-bold text-gray-800  font-logo">
+      moment
+    </h3>
+    <button class="rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700   " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
+      <span class="sr-only">Close modal</span>
+      <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+        
+        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./about.html">About</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg d md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./room.html">Room</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./facility.html">Facilities</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./meal.html">Meal</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./travel.html">Travel</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./faqs.html">FAQs</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./contact.html">Contact</a>
+</div>
+    
+
+
+    <!-- cover -->
+    <section id="indicators-carousel" class="relative" data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 md:h-96 overflow-hidden mb-12 ">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+              <img src="/image/118027065_3244565802300732_1754819507402908736_n.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          </div>
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="/image/313933632_1096256764421537_1920226753382741123_n.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="/image/w1200.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          </div>
+          <!-- Item 4 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="/image/310712306_445971464268596_907628661812032259_n.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+          </div>
+          
+      </div>
+      <!-- Slider indicators -->
+      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+          <button type="button" class="w-2 h-2 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+          <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+          <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+          <button type="button" class="w-2 h-2 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+          
+      </div>
+      <!-- Slider controls -->
+      <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 group-hover:bg-white/30 transition duration-150 ease-out hover:ease-in">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 group-hover:bg-white/30 transition duration-150 ease-out hover:ease-in">
+              <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+              <span class="sr-only">Next</span>
+          </span>
+      </button>
+    </section>
+
+
+    <!-- room -->
+    <div class="mb-12">
+      <h1  class="text-center mb-4 text-4xl text-gray-800 ">
+        Junior Suite
+      </h1>
+      <h2 class=" text-base text-center font-medium text-slate-400 ">NT$ 2,400
+      </h2>
+    </div>
+    
+
+    <section class="container mx-auto px-4  md:px-12 mb-12 text-center md:text-left">
+
+      <div class="grid grid-cols-1 md:grid-flow-row-dense md:grid-cols-3  m-auto gap-0 md:gap-8 ">
+
+        
+        <!-- content -->
+        <div class="col-span-2">
+          <div class="flex flex-col">
+            <p class="mb-8 order-2 md:order-1 ">
+              輕鬆入住應有盡有的精緻房型<br>
+              提供一大床與雙單床兩種選擇<br>
+              無論雙人出遊、商務之旅，都能愜意成行！
+            </p>
+  
+            <!-- check in/out -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 order-3 md:order-2">
+  
+              <!-- check-in -->
+              <div class="">
+                <h2  class=" text-2xl text-slate-400 mb-4">
+                  Check-In
+                </h2>
+  
+                <ul class="list-disc list-inside">
+                  <li>櫃檯入住時間 15:00-20:00</li>
+                  <li>20:00 後為自助入住，請事先聯繫</li>
+                </ul>
+  
+              </div>
+  
+              <!-- check-out -->
+              <div class="">
+                <h2  class=" text-2xl text-slate-400 mb-4">
+                  Check-Out
+                </h2>
+  
+                <ul class="list-disc list-inside">
+                  <li>退房時間 11:00</li>
+                  <li>延後退房：$500/30 mins.</li>
+                </ul>
+  
+              </div>
+  
+            </div>
+  
+            <!-- button -->
+              <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="w-fit text-center text-sm inline-block mt-2 bg-slate-400 text-white  hover:bg-slate-900 border-solid border-1  rounded-xl p-3 transition duration-300 ease-out hover:ease-in hover:-translate-y-1 mx-auto md:mx-0 order-1 md:order-3 mb-6 md:mb-0">Check Now
+              </button>
+          </div>
+          
+
+        </div>
+
+
+        <!-- amenities -->
+        <div class=" mx-auto">
+          <h2  class=" text-2xl text-gray-800 mb-4">
+            Amenities
+          </h2>
+
+          <!-- icon -->
+          <div class="grid grid-cols-2 md:grid-cols-1 md:gap-0 mb-8 order-3 md:order-2 text-sm md:text-base">
+
+            <div>
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-user-group  text-slate-400  my-auto"></i>
+                </div>
+                <p>1-2 Persons</p>
+              </div>
+              <!-- <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-people-group  text-slate-400  my-auto"></i>
+                </div>
+                <p>3-4 Persons</p>
+              </div> -->
+              
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-bed  text-slate-400  my-auto"></i>
+                </div>
+                <p>1 bed</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-wifi  text-slate-400  my-auto"></i>
+                </div>
+                <p>Free Wifi</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-utensils  text-slate-400  my-auto"></i>
+                </div>
+                <p>Breakfast</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-shower  text-slate-400  my-auto"></i>
+                </div>
+                <p>Shower</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-toilet  text-slate-400  my-auto"></i>
+                </div>
+                <p>Bathroom</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-snowflake  text-slate-400  my-auto"></i>
+                </div>
+                <p>Air Conditioner</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-plug  text-slate-400  my-auto"></i>
+                </div>
+                <p>Socket</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-tv  text-slate-400  my-auto"></i>
+                </div>
+                <p>TV</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-dog  text-slate-400  my-auto"></i>
+                </div>
+                <p>Pet</p>
+              </div>
+  
+              <div class="flex flex-row ">
+                <div class="w-10">
+                  <i class="fa-solid fa-ban-smoking  text-slate-400  my-auto"></i>
+                </div>
+                <p>No Smoking</p>
+              </div>
+            </div>
+
+            
+
+            
+            
+          </div>
+          
+          
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+<!-- Main modal -->
+<div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+    <div class="relative w-full h-full max-w-md md:h-auto">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow ">
+            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center " data-modal-hide="authentication-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+                <h3 class="mb-2 text-xl text-center font-medium text-gray-900 ">Junior Suite</h3>
+                <h3 class="mb-6 text-base text-center font-medium text-slate-400 ">NT$ 2,400</h3>
+                <form class="space-y-6" action="#">
+                  <!-- date -->
+                  <div date-rangepicker class="flex items-center">
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                      </div>
+                      <input name="start" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder="Check In">
+                    </div>
+                    <span class="mx-4 text-gray-500">to</span>
+                    <div class="relative">
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                      </div>
+                      <input name="end" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder="Check Out">
+                  </div>
+                  </div>
+
+                  <!-- person -->
+                  <div>
+                    <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 ">Guests</label>
+                    <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="1 位" required min="1" max="10">
+                </div>
+
+
+                  <!-- name -->
+                  <div class="grid gap-6 mb-6 md:grid-cols-2">
+                    <div>
+                      <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">First name</label>
+                      <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required>
+                    </div>
+                    <div>
+                        <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 ">Last name</label>
+                        <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Doe" required>
+                    </div>
+                  </div>
+
+                  <!-- phone -->
+                  <div>
+                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 ">Phone number</label>
+                    <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                </div>
+
+                  <!-- email -->
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="example@gmail.com" required>
+                    </div>
+
+                    <!-- pay -->
+                    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Payment</label>
+                    <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                      <option selected>信用卡</option>
+                      <option value="ATM 轉帳">ATM 轉帳</option>
+                      <option value="現金付款">現金付款</option>
+                    </select>
+
+                    
+                    <div class="flex justify-between">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 " required>
+                            </div>
+                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 ">已確認以上資訊無誤，訂房後30分鐘內將會寄出訂房通知信及須知。</label>
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="w-full bg-slate-400 text-white  hover:bg-slate-900 border-solid border-1  rounded-xl p-3 transition duration-300 ease-out hover:ease-in hover:-translate-y-1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  text-sm px-5 py-2.5 text-center ">Check Now</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+    
+  
+
+
+
+
+
+
+
+    <!-- footer -->
+  <footer class="relative bg-gradient-to-r from-gray-50 via-[#d9e9f8] to-gray-50 pt-8 pb-6">
+    <div class="container mx-auto px-12">
+      <div class="flex flex-wrap text-center md:text-left">
+
+        <div class="w-full md:w-6/12 px-4">
+          <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment
+          </a>
+          
+
+          <div class="flex flex-row text-sm text-gray-600 mt-6 justify-center md:justify-start">
+            <div class="w-10">
+              <i class="fa-solid fa-phone  text-slate-400  my-auto text-lg"></i>
+            </div>
+            <p>+886-6-2218188</p>
+          </div>
+          <div class="flex flex-row text-sm text-gray-600 mt-2 justify-center md:justify-start">
+            <div class="w-10">
+              <i class="fa-solid fa-envelope  text-slate-400  my-auto text-lg"></i>
+            </div>
+            <p>moment@gmail.com</p>
+          </div>
+          
+          <p class=" mt-4 text-sm text-gray-600">
+            708 台南市安平區漁光路114號
+          </p>
+          
+          <div class="flex mt-6 space-x-6 text-gray-600 justify-center md:justify-start">
+            <a class="hover:text-slate-400 text-2xl" href target="_blank" rel="noreferrer">
+              <span class="sr-only"> Facebook </span>
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a class="hover:text-slate-400 text-2xl" href target="_blank" rel="noreferrer">
+              <span class="sr-only"> Instagram </span>
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="hover:text-slate-400 text-2xl" href target="_blank" rel="noreferrer">
+              <span class="sr-only"> Instagram </span>
+              <i class="fa-brands fa-line"></i>
+            </a>
+
+          </div>
+        </div>
+
+
+        <div class="w-full md:w-6/12 px-4 hidden md:block">
+
+          <div class="grid grid-cols-2 items-top mb-6">
+            <div class="w-full  px-4 ml-auto">
+              <div>
+                <p class="font-medium">
+                  Explore
+                </p>
+                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a class="hover:opacity-75" href="./about.html"> About </a>
+                  <a class="hover:opacity-75" href="./room.html"> Room </a>
+                  <a class="hover:opacity-75" href="./facility.html"> Facilities </a>
+                  <a class="hover:opacity-75" href="./meal.html"> Meal </a>
+                  <a class="hover:opacity-75" href="./travel.html"> Travel </a>
+                </nav>
+              </div>
+            </div>
+            <div class="w-full  px-4">
+              <div>
+                <p class="font-medium">
+                  Services
+                </p>
+                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                  <a class="hover:opacity-75" href="./faqs.html"> FAQs </a>
+                  <a class="hover:opacity-75" href="./contact.html"> Contact </a>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="my-6 border-blueGray-300">
+      <div class="flex flex-wrap items-center md:justify-between justify-center">
+        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+          <div class="text-sm text-slate-700  py-1">
+            Copyright © 2023 Moment by Tina Chen.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="/node_modules/preline/dist/preline.js"></script>
+    <!-- flowbite -->
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="/node_modules/flowbite/dist/datepicker.js"></script>
+    <!-- tw element -->
+    <script src="/node_modules/tw-elements/dist/js/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body>
+</html>
