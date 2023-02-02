@@ -25,7 +25,7 @@ html {
 }
 
 .pagetop1{
-    background: url("/image/room-20.jpg")center center no-repeat;
+    background: url("../image/room-20.jpg")center center no-repeat;
     min-height: 480px;
     background-attachment: fixed;
     background-size: cover;
