@@ -16,64 +16,66 @@
 </head>
 <body>
     <!-- navbar -->
-    <div class="w-full text-gray-700 sticky top-0 bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg z-50">
+  <div class="w-full text-gray-700 sticky top-0 bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg z-50">
 
-        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+    <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
 
-        <div class="p-4 flex flex-row items-center justify-between">
-            <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment</a>
+      <div class="p-4 flex flex-row items-center justify-between">
+        <a href="/index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment</a>
 
-            <button class="md:hidden rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
-            
-            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-            </svg>
-            </button>
-        </div>
-
-        <nav :class="{'flex': open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            
-            <!-- <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline " href="#">Blog</a> -->
-            <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="#">About</a>
-            <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./room.html">Room</a>
-            <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./facility.html">Facilities</a>
-            <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./travel.html">Travel</a> 
-            <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./faqs.html">FAQs</a> 
-            <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./contact.html">Contact</a>
-            
-            
-        </nav>
-        </div>
-    </div>
-
-    <!-- mobile -->
-    <div id="hs-overlay-example" class="hs-overlay hs-overlay-open:translate-x-0  -translate-x-full fixed top-0 left-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white border-r  hidden" tabindex="-1">
-    <div class="flex justify-between items-center py-3 px-4 ">
-        <h3 class="font-bold text-gray-800  font-logo">
-        moment
-        </h3>
-        <button class="rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700   " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
-        <span class="sr-only">Close modal</span>
-        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-            
+        <button class="md:hidden rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
+          
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
             <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-        </svg>
+          </svg>
         </button>
+      </div>
+
+      <nav :class="{'flex': open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        
+        <!-- <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline " href="#">Blog</a> -->
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="#">About</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./room.html">Room</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./facility.html">Facilities</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./meal.html">Meal</a>
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./travel.html">Travel</a> 
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./faqs.html">FAQs</a> 
+        <a class="px-4 py-2 mt-2 text-sm  rounded-lg  md:mt-0 md:ml-4 hover:text-slate-400 focus:text-slate-400 hover:bg-white hover:bg-opacity-20 focus:bg-white focus:bg-opacity-20 focus:shadow-outline transition duration-150 ease-out hover:ease-in" href="./contact.html">Contact</a>
+        
+        
+      </nav>
     </div>
-    <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
-    <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg d md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./room.html">Room</a>
-    <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./facility.html">Facilities</a>
-    <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./travel.html">Travel</a>
-    <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./faqs.html">FAQs</a>
-    <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./contact.html">Contact</a>
-    </div>
+</div>
+
+<!-- mobile -->
+<div id="hs-overlay-example" class="hs-overlay hs-overlay-open:translate-x-0  -translate-x-full fixed top-0 left-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white border-r  hidden" tabindex="-1">
+  <div class="flex justify-between items-center py-3 px-4 ">
+    <h3 class="font-bold text-gray-800  font-logo">
+      moment
+    </h3>
+    <button class="rounded-lg focus:shadow-outline transition-all text-gray-500 hover:text-gray-700   " data-hs-overlay="#hs-overlay-example" @click="open = !open" >
+      <span class="sr-only">Close modal</span>
+      <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+        
+        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+  </div>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg d md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./room.html">Room</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./facility.html">Facilities</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./meal.html">Meal</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./travel.html">Travel</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./faqs.html">FAQs</a>
+  <a class="block px-4 py-2 mt-2 text-sm  bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./contact.html">Contact</a>
+</div>
     
 
     <!-- about -->
     <section class="grid grid-cols-1 sm:grid-cols-2 mb-12 ">
         <div class="">
-            <img class="rounded-r-full pr-6 sm:pr-0" src="image/278462640_1040367999910496_914689956697471922_n.jpg" alt="">
+            <img class="rounded-r-full pr-6 sm:pr-0" src="/image/room-18.jpg" alt="">
         </div>
     
         <div class="text-center sm:text-left sm:px-12 md:px-24 my-auto ">
@@ -427,7 +429,7 @@
         <div class="flex flex-wrap text-center md:text-left">
 
             <div class="w-full md:w-6/12 px-4">
-            <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment
+            <a href="/index.html" class="text-lg font-semibold tracking-widest text-gray-900  rounded-lg focus:outline-none focus:shadow-outline hover:text-slate-400 transition duration-150 ease-out hover:ease-in font-logo">moment
             </a>
             
 

@@ -343,13 +343,7 @@
 
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <script>
-      $(document).on('click', '.accordion li', function(e) {
-          $(this).find('div').slideToggle();
-          $(this).find('svg').toggleClass('flipY');
-      });
-    </script>
+
     <!-- alpine -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <!-- preline -->
@@ -358,6 +352,12 @@
     <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="node_modules/flowbite/dist/datepicker.js"></script>
     <!-- faq -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script>
+      $(document).on('click', '.accordion li', function(e) {
+          $(this).find('div').slideToggle();
+          $(this).find('svg').toggleClass('flipY');
+      });
+    </script>
 </body>
 </html>
