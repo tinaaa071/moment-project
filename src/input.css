@@ -90,6 +90,17 @@ html {
     /* aspect-ratio: 16/9; */
     box-shadow: inset 0px -80px 80px rgba(0, 0, 0, 0.25); 
 }
+.pagetop7{
+    background: url("../image/travel-23.webp")center center no-repeat;
+    min-height: 480px;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    /* object-fit: cover; */
+    /* aspect-ratio: 16/9; */
+    box-shadow: inset 0px -80px 80px rgba(0, 0, 0, 0.25); 
+}
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     color: #94A3B8!important;
     border-color: #94A3B8!important;
