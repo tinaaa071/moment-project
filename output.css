@@ -2129,14 +2129,6 @@ input:checked + .toggle-bg{
   text-indent: 1.25rem;
 }
 
-.indent-8{
-  text-indent: 2rem;
-}
-
-.indent-7{
-  text-indent: 1.75rem;
-}
-
 .indent-6{
   text-indent: 1.5rem;
 }
@@ -2487,7 +2479,7 @@ html {
 }
 
 .pagetop7{
-  background: url("../image/travel-23.webp")center center no-repeat;
+  background: url("../image/travel-23.jpeg")center center no-repeat;
   min-height: 480px;
   background-attachment: fixed;
   background-size: cover;
