@@ -72,7 +72,7 @@ html {
     background: url("../image/room-24a.jpg")center center no-repeat;
     min-height: 480px;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     /* background-repeat: no-repeat; */
     background-position: center;
     /* object-fit: cover; */
@@ -157,7 +157,7 @@ html {
     box-shadow: inset 0px -80px 80px rgba(0, 0, 0, 0.25); 
 }
 .pagetop13{
-    background: url("../image/travel-21.jpg")center center no-repeat;
+    background: url("../image/travel-21.jpeg")center center no-repeat;
     min-height: 480px;
     background-attachment: fixed;
     background-size: cover;
@@ -277,6 +277,20 @@ html {
     /* aspect-ratio: 16/9; */
     box-shadow: inset 0px -80px 80px rgba(0, 0, 0, 0.25); 
 }
+
+@media (max-width:768px){
+    .pagetop1,.pagetop2,.pagetop3,.pagetop4,.pagetop5,.pagetop6,.pagetop8,.pagetop9,.pagetop10,.pagetop11,.pageto12,.pagetop13,.pagetop14,.pagetop15,.pagetop16,.pagetop17,.pagetop18,.pagetop19,.pagetop20,.pagetop21,.pagetop22,.pagetop23 {
+        /* min-height: 400px; */
+        background-size: contain;
+        background-position: top;
+    }
+    .pagetop7{
+        /* min-height: 400px; */
+        background-size: contain;
+        background-position: center;
+    }
+}
+
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     color: #94A3B8!important;
     border-color: #94A3B8!important;
