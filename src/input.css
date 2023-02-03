@@ -72,7 +72,7 @@ html {
     background: url("../image/room-24a.jpg")center center no-repeat;
     min-height: 480px;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
     /* background-repeat: no-repeat; */
     background-position: center;
     /* object-fit: cover; */
