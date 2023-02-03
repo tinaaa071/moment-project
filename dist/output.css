@@ -2066,14 +2066,14 @@ input:checked + .toggle-bg{
   padding-right: 1.25rem;
 }
 
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .px-2{
@@ -3098,6 +3098,11 @@ html {
   .sm\:px-12{
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .sm\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .sm\:pr-0{
